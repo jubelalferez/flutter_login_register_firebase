@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "611445246810",
+    "firebase_url": "https://flutter-tutorial-jubel.firebaseio.com",
+    "project_id": "flutter-tutorial-jubel",
+    "storage_bucket": "flutter-tutorial-jubel.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:611445246810:android:6f6b31016afbb0aa424163",
+        "android_client_info": {
+          "package_name": "com.example.flutter_tutorial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "611445246810-e08cspk70rna2imer7mkjjrbo2ueudd7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnrqHdxDvO54A7NaWQ7rVkZXrjImgsDmE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "611445246810-e08cspk70rna2imer7mkjjrbo2ueudd7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
