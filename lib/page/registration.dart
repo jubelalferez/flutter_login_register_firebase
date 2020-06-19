@@ -1,43 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_tutorial/bloc/login_bloc.dart';
+import 'package:flutter_tutorial/bloc/registration_bloc.dart';
 import 'package:flutter_tutorial/model/account.dart';
-import 'package:flutter_tutorial/page/home.dart';
 
-class Login extends StatefulWidget {
-  Login({Key key}) : super(key: key);
+class Registration extends StatefulWidget {
+  Registration({Key key}) : super(key: key);
 
   @override
-  _LoginState createState() => _LoginState();
+  _RegistrationState createState() => _RegistrationState();
 }
 
-class _LoginState extends State<Login> {
+class _RegistrationState extends State<Registration> {
   Account account = Account();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Login",
+          "Registration",
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
         ),
       ),
-      body: BlocConsumer<LoginBloc, LoginState>(
+      body: BlocConsumer<RegistrationBloc, RegistrationState>(
         listener: (context, state) {
-          if (state is LoginSuccess) {
-            Navigator.pushReplacementNamed(context, '/home');
+          if (state is RegistrationSuccess) {
+            Navigator.pushNamed(context, '/verification');
           }
         },
         builder: (context, state) {
-          if (state is LoginInitial) {
-            return buildLoginInitial(context);
-          } else if (state is LoginLoading) {
+          if (state is RegistrationLoading) {
             return buildLoading(context);
+          } else if (state is RegistrationInitial) {
+            return buildRegistrationInitial(context);
           }
-          return buildLoginInitial(context);
+          return buildRegistrationInitial(context);
         },
       ),
     );
@@ -49,7 +48,7 @@ class _LoginState extends State<Login> {
     );
   }
 
-  Widget buildLoginInitial(BuildContext context) {
+  Widget buildRegistrationInitial(BuildContext context) {
     return Container(
       alignment: Alignment.center,
       child: Column(
@@ -59,7 +58,7 @@ class _LoginState extends State<Login> {
             margin: EdgeInsets.only(
               top: 20,
             ),
-            child: Text("UserName"),
+            child: Text("Username"),
           ),
           Container(
             width: 200,
@@ -87,6 +86,21 @@ class _LoginState extends State<Login> {
             ),
           ),
           Container(
+            margin: EdgeInsets.only(
+              top: 20,
+            ),
+            child: Text("Phone number"),
+          ),
+          Container(
+            width: 200,
+            child: TextField(
+              decoration: InputDecoration(hintText: "0932"),
+              onChanged: (value) {
+                account.registrationPhoneNumber = value;
+              },
+            ),
+          ),
+          Container(
             height: 47,
             width: 200,
             margin: EdgeInsets.only(
@@ -101,12 +115,12 @@ class _LoginState extends State<Login> {
                 borderRadius: BorderRadius.circular(20.0),
               ),
               onPressed: () {
-                triggerLoginButton(
-                    context, account.loginUsername, account.loginPassword);
+                triggerRegisterButton(context, account.loginUsername,
+                    account.loginPassword, account.registrationPhoneNumber);
               },
               child: Container(
                 child: Text(
-                  "Login",
+                  "Register",
                   style: TextStyle(color: Colors.black),
                 ),
               ),
@@ -118,8 +132,8 @@ class _LoginState extends State<Login> {
   }
 }
 
-void triggerLoginButton(
-    BuildContext context, String username, String password) {
-  final loginBloc = BlocProvider.of<LoginBloc>(context);
-  loginBloc.add(OnClickLogin(username, password));
+void triggerRegisterButton(BuildContext context, String username,
+    String password, String phoneNumber) {
+  final registrationBloc = BlocProvider.of<RegistrationBloc>(context);
+  registrationBloc.add(OnClickRegister(username, password, phoneNumber));
 }

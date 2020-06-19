@@ -18,11 +18,16 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     LoginEvent event,
   ) async* {
     if (event is OnClickLogin) {
+      yield LoginLoading();
       if (await database.getLoginData(event.username, event.password) == true) {
         yield LoginSuccess();
       } else if (await database.getLoginData(event.username, event.password) ==
           false) {
+        yield LoginInitial();
         print('Incorrect username or password!');
+      } else {
+        yield LoginInitial();
+        print('Connection Error');
       }
     }
   }

@@ -13,7 +13,11 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: Container(
         child: Column(
-          children: <Widget>[Text("Home")],
+          children: <Widget>[
+            SafeArea(
+              child: Text("Home"),
+            ),
+          ],
         ),
       ),
     );
