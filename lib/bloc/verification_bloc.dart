@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_tutorial/model/account.dart';
-import 'package:flutter_tutorial/service/database.dart';
+import 'package:flutter_login_register_firebase/model/account.dart';
+import 'package:flutter_login_register_firebase/service/database.dart';
 
 part 'verification_event.dart';
 part 'verification_state.dart';

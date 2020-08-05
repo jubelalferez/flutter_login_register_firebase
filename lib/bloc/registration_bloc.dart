@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter_tutorial/model/account.dart';
-import 'package:flutter_tutorial/service/database.dart';
+import 'package:flutter_login_register_firebase/model/account.dart';
+import 'package:flutter_login_register_firebase/service/database.dart';
 
 part 'registration_event.dart';
 part 'registration_state.dart';

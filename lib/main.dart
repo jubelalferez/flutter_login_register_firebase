@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_tutorial/bloc/verification_bloc.dart';
-import 'package:flutter_tutorial/page/get_started.dart';
-import 'package:flutter_tutorial/page/registration.dart';
-import 'package:flutter_tutorial/page/verification.dart';
+import 'package:flutter_login_register_firebase/bloc/verification_bloc.dart';
+import 'package:flutter_login_register_firebase/page/get_started.dart';
+import 'package:flutter_login_register_firebase/page/registration.dart';
+import 'package:flutter_login_register_firebase/page/verification.dart';
 
 import 'bloc/login_bloc.dart';
 import 'bloc/registration_bloc.dart';

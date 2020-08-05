@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_tutorial/bloc/registration_bloc.dart';
-import 'package:flutter_tutorial/model/account.dart';
+import 'package:flutter_login_register_firebase/bloc/registration_bloc.dart';
+import 'package:flutter_login_register_firebase/model/account.dart';
 
 class Registration extends StatefulWidget {
   Registration({Key key}) : super(key: key);

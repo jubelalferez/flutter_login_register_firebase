@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_tutorial/bloc/login_bloc.dart';
-import 'package:flutter_tutorial/model/account.dart';
-import 'package:flutter_tutorial/page/home.dart';
+import 'package:flutter_login_register_firebase/bloc/login_bloc.dart';
+import 'package:flutter_login_register_firebase/model/account.dart';
+import 'package:flutter_login_register_firebase/page/home.dart';
 
 class Login extends StatefulWidget {
   Login({Key key}) : super(key: key);
@@ -59,7 +59,7 @@ class _LoginState extends State<Login> {
             margin: EdgeInsets.only(
               top: 20,
             ),
-            child: Text("UserName"),
+            child: Text("Username"),
           ),
           Container(
             width: 200,

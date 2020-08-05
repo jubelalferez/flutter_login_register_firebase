@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter_tutorial/service/database.dart';
+import 'package:flutter_login_register_firebase/service/database.dart';
 
 part 'login_event.dart';
 part 'login_state.dart';
